@@ -19,10 +19,12 @@ require_once 'pdo-func.php';
 
 use Facebook\Facebook;
 use Facebook\FacebookRequest;
+use Facebook\FacebookClient;
 
     $fb = new Facebook($config);
 
     $helper = $fb->getRedirectLoginHelper();
+
 
     try 
     {
@@ -42,6 +44,24 @@ use Facebook\FacebookRequest;
     }
 
     $response = $fb->get('/me?fields=id,name', $accessToken);
+
+    $user = $response->getGraphUser();
+    $name = $user['name'];
+    $user_id = $response->getGraphUser()->getId();
+    echo "-------------------------" . '<br>';
+    $url="http://www.facebook.com/". $user_id;
+    $id =  substr(strrchr($url,'/'),1);
+
+
+
+    echo "<img src=\"http://graph.facebook.com/" . $id . "/picture?type=large\"/>";
+    echo "<br>";
+    echo "-------------------------" . '<br>';
+    echo $name;
+    echo "<br>";
+    echo "-------------------------" . '<br>';
+
+
     insertUserName($response);
 
     if (! isset($accessToken))
@@ -99,6 +119,8 @@ use Facebook\FacebookRequest;
     }
 
     $_SESSION['fb_access_token'] = (string) $accessToken;
+    
+
 
     getPosts($page_ID, $accessToken);
 ?>

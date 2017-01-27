@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Added Post</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        form {
+            width: 50%;
+        }
+    </style>
+        </head>
+<body>
+<form method="POST" action="form_query.php" class="form-stacked">
+    <label for="message">Message:</label>
+    <input class="form-control"  type="text" id="message" name="message" placeholder="Message of post" />
+    <label for="picture">Picture:</label>
+    <input class="form-control" type="text" id="picture" name="picture" placeholder="Picture of post" />
+    <label for="link">Link:</label>
+    <input class="form-control" type="text" id="link" name="link" placeholder="Link of post" />
+    <label for="name">Name:</label>
+    <input class="form-control" type="text" id="name" name="name" placeholder="Name of post" />
+    <label for="caption">Caption:</label>
+    <input class="form-control" type="text" id="caption" name="caption" placeholder="Caption of post" />
+    <label for="description">Description:</label>
+    <input class="form-control" type="text" id="description" name="description" placeholder="Description of post" />
+
+    <div class="actions">
+        <input type="submit" class="form-control" value="Post" />
+        <input type="reset" class="form-control" value="Reset" />
+    </div>
+</form>
+</body>
+</html>

@@ -29,5 +29,7 @@
             echo $text ,'<br>';
             echo "================================",'<br>';
         }
+
+        echo '<a href="form_added_post.html">Added Post!</a>';
     }
 ?>
